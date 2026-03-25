@@ -79,6 +79,14 @@ public class Robot {
     }
 
     public void controlWithGamePad2() {
+        boolean IntakeBool = gamepad2.right_bumper;
+        boolean ReverseIntakeBool = gamepad2.left_bumper;
+        intake.intake(IntakeBool);
+        intake.reverse_intake(ReverseIntakeBool);
 
+        boolean OuttakeBool = gamepad2.right_trigger_pressed;
+        boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
+        outtake.outtake(OuttakeBool);
+        outtake.reverse_outtake(ReverseOuttakeBool);
     }
 }

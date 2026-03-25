@@ -49,6 +49,7 @@ public class FullOpMode extends LinearOpMode {
         while (opModeIsActive()) {
             robot.driveWithGamePad1();
             robot.driveWithGamePad2();
+            robot.controlWithGamePad2();
         }
     }
 }
