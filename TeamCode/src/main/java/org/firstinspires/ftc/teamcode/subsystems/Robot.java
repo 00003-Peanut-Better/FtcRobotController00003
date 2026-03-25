@@ -35,12 +35,14 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Robot {
     public Drive driveBase;
+    public Intake intake;
     Gamepad gamepad1;
     Gamepad gamepad2;
     //public Slide slides;
 
     public Robot(HardwareMap map, Gamepad gamepad1, Gamepad gamepad2) {
         driveBase = new Drive(map);
+        intake = new Intake(map);
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
     }
@@ -72,5 +74,9 @@ public class Robot {
                 driveBase.drive(forward, strafe, turn);
             }
         }
+    }
+
+    public void controlWithGamePad2() {
+
     }
 }
