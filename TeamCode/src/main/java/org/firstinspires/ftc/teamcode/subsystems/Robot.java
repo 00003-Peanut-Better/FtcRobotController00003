@@ -89,4 +89,30 @@ public class Robot {
         outtake.outtake(OuttakeBool);
         outtake.reverse_outtake(ReverseOuttakeBool);
     }
+
+    public void driveAndControlWithGamePad1(){
+        if (abs(gamepad2.left_stick_x + gamepad2.left_stick_y + gamepad2.right_stick_x) < 0.1) {
+            double forward = gamepad1.left_stick_y;
+            double strafe = gamepad1.left_stick_x;
+            double turn = gamepad1.right_stick_x;
+
+            boolean controlSpeed = gamepad1.x;
+
+            if (controlSpeed) {
+                driveBase.drive(forward * 0.3, strafe * 0.3, turn * 0.3);
+            } else {
+                driveBase.drive(forward*0.7, strafe*0.7, turn*0.7);
+            }
+        }
+
+        boolean IntakeBool = gamepad2.right_bumper;
+        boolean ReverseIntakeBool = gamepad2.left_bumper;
+        intake.intake(IntakeBool);
+        intake.reverse_intake(ReverseIntakeBool);
+
+        boolean OuttakeBool = gamepad2.right_trigger_pressed;
+        boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
+        outtake.outtake(OuttakeBool);
+        outtake.reverse_outtake(ReverseOuttakeBool);
+    }
 }
