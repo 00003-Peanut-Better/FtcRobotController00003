@@ -16,12 +16,14 @@ public class AutoOpMode extends LinearOpMode {
 
         while(opModeIsActive()) {
             wait(5000);
+            robot.intake.intake(true);
             robot.driveBase.drive(0.3, 0, 0);
             wait(3000);
             robot.driveBase.stop();
+            robot.intake.intake(false);
             wait(500);
-            robot.driveBase.drive(0, 0, 0.1);
-            wait(1000);
+            robot.driveBase.drive(0, 0, 0.2);
+            wait(2000);
             robot.driveBase.stop();
             robot.driveBase.drive(0.3, 0, 0);
             wait(2000);
