@@ -84,4 +84,19 @@ public class Drive {
         backRightMotor.setPower(0);
     }
 
+    public void test(boolean a, boolean b, boolean x, boolean y) {
+        if (a){
+            frontLeftMotor.setPower(0.3);
+        }
+        if (b){
+            frontRightMotor.setPower(0.3);
+        }
+        if (x){
+            backLeftMotor.setPower(0.3);
+        }
+        if (y){
+            backRightMotor.setPower(0.3);
+        }
+    }
+
 }
