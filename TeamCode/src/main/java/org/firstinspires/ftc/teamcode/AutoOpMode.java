@@ -15,18 +15,18 @@ public class AutoOpMode extends LinearOpMode {
         waitForStart();
 
         while(opModeIsActive()) {
-            wait(5000);
-            robot.intake.intake(true);
-            robot.driveBase.drive(0.3, 0, 0);
-            wait(3000);
+            sleep(5000);
+            //robot.intake.intake(true);
+            robot.driveBase.drive(-0.3, 0, 0);
+            sleep(3000);
             robot.driveBase.stop();
-            robot.intake.intake(false);
-            wait(500);
+            //robot.intake.intake(false);
+            sleep(500);
             robot.driveBase.drive(0, 0, 0.2);
-            wait(2000);
+            sleep(2000);
             robot.driveBase.stop();
-            robot.driveBase.drive(0.3, 0, 0);
-            wait(2000);
+            robot.driveBase.drive(-0.3, 0, 0);
+            sleep(2000);
             robot.driveBase.stop();
         }
     }

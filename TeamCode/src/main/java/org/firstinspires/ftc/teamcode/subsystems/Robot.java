@@ -35,7 +35,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Robot {
     public Drive driveBase;
-    public Intake intake;
+    //public Intake intake;
     //public Outtake outtake;
     Gamepad gamepad1;
     Gamepad gamepad2;
@@ -43,7 +43,7 @@ public class Robot {
 
     public Robot(HardwareMap map, Gamepad gamepad1, Gamepad gamepad2) {
         driveBase = new Drive(map);
-        intake = new Intake(map);
+        //intake = new Intake(map);
         //outtake = new Outtake(map);
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
@@ -52,8 +52,8 @@ public class Robot {
     public void driveWithGamePad1(){
         if (abs(gamepad2.left_stick_x + gamepad2.left_stick_y + gamepad2.right_stick_x) < 0.1) {
             double forward = gamepad1.left_stick_y;
-            double strafe = gamepad1.left_stick_x;
-            double turn = gamepad1.right_stick_x;
+            double strafe = -gamepad1.left_stick_x;
+            double turn = -gamepad1.right_stick_x;
 
             boolean controlSpeed = gamepad1.x;
 
@@ -67,8 +67,8 @@ public class Robot {
 
     public void driveWithGamePad2() {
         double forward = gamepad2.left_stick_y;
-        double strafe = gamepad2.left_stick_x;
-        double turn = gamepad2.right_stick_x;
+        double strafe = -gamepad2.left_stick_x;
+        double turn = -gamepad2.right_stick_x;
 
         if(abs(forward) > 0.1 || abs(strafe) > 0.1 || abs(turn) > 0.1){
             driveBase.drive(forward*0.3, strafe*0.3, turn*0.3);
@@ -81,8 +81,8 @@ public class Robot {
     public void controlWithGamePad2() {
         boolean IntakeBool = gamepad2.right_bumper;
         boolean ReverseIntakeBool = gamepad2.left_bumper;
-        intake.intake(IntakeBool);
-        intake.reverse_intake(ReverseIntakeBool);
+        //intake.intake(IntakeBool);
+        //intake.reverse_intake(ReverseIntakeBool);
 
         boolean OuttakeBool = gamepad2.right_trigger_pressed;
         boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
@@ -93,8 +93,8 @@ public class Robot {
     public void driveAndControlWithGamePad1(){
         if (abs(gamepad2.left_stick_x + gamepad2.left_stick_y + gamepad2.right_stick_x) < 0.1) {
             double forward = gamepad1.left_stick_y;
-            double strafe = gamepad1.left_stick_x;
-            double turn = gamepad1.right_stick_x;
+            double strafe = -gamepad1.left_stick_x;
+            double turn = -gamepad1.right_stick_x;
 
             boolean controlSpeed = gamepad1.x;
 
@@ -107,8 +107,8 @@ public class Robot {
 
         boolean IntakeBool = gamepad2.right_bumper;
         boolean ReverseIntakeBool = gamepad2.left_bumper;
-        intake.intake(IntakeBool);
-        intake.reverse_intake(ReverseIntakeBool);
+        //intake.intake(IntakeBool);
+        //intake.reverse_intake(ReverseIntakeBool);
 
         boolean OuttakeBool = gamepad2.right_trigger_pressed;
         boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
