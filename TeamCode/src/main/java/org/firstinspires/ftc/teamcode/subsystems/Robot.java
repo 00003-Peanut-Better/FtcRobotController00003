@@ -35,7 +35,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Robot {
     public Drive driveBase;
-    //public Intake intake;
+    public Intake intake;
     //public Outtake outtake;
     Gamepad gamepad1;
     Gamepad gamepad2;
@@ -43,7 +43,7 @@ public class Robot {
 
     public Robot(HardwareMap map, Gamepad gamepad1, Gamepad gamepad2) {
         driveBase = new Drive(map);
-        //intake = new Intake(map);
+        intake = new Intake(map);
         //outtake = new Outtake(map);
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
@@ -105,10 +105,10 @@ public class Robot {
             }
         }
 
-        boolean IntakeBool = gamepad2.right_bumper;
-        boolean ReverseIntakeBool = gamepad2.left_bumper;
-        //intake.intake(IntakeBool);
-        //intake.reverse_intake(ReverseIntakeBool);
+        boolean IntakeBool = gamepad1.right_bumper;
+        boolean ReverseIntakeBool = gamepad1.left_bumper;
+        intake.intake(IntakeBool);
+        intake.reverse_intake(ReverseIntakeBool);
 
         boolean OuttakeBool = gamepad2.right_trigger_pressed;
         boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
