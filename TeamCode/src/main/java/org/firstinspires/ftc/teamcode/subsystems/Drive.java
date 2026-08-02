@@ -58,10 +58,10 @@ public class Drive {
     }
 
     public void drive(double forward, double strafe, double turn) {
-        double frontLeftSpeed = forward + turn + strafe;
-        double backLeftSpeed = forward + turn - strafe;
-        double frontRightSpeed = forward - turn - strafe;
-        double backRightSpeed = forward - turn + strafe;
+        double frontLeftSpeed = -forward - turn - strafe;
+        double backLeftSpeed = -forward - turn + strafe;
+        double frontRightSpeed = -forward + turn + strafe;
+        double backRightSpeed = -forward + turn - strafe;
 
         //frontLeftMotor.setDirection(FRONT_LEFT_REVERSE ? DcMotorSimple.Direction.REVERSE : DcMotorSimple.Direction.FORWARD);
         //backLeftMotor.setDirection(BACK_LEFT_REVERSE ? DcMotorSimple.Direction.REVERSE : DcMotorSimple.Direction.FORWARD);

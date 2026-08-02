@@ -107,8 +107,14 @@ public class Robot {
 
         boolean IntakeBool = gamepad1.right_bumper;
         boolean ReverseIntakeBool = gamepad1.left_bumper;
-        intake.intake(IntakeBool);
+        intake.run_intake(IntakeBool);
         intake.reverse_intake(ReverseIntakeBool);
+
+        boolean Stop = gamepad1.a;
+        if (Stop) {
+            intake.inmotor1.setPower(0);
+            intake.inmotor2.setPower(0);
+        }
 
         boolean OuttakeBool = gamepad2.right_trigger_pressed;
         boolean ReverseOuttakeBool = gamepad2.left_trigger_pressed;
